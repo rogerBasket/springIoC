@@ -16,6 +16,8 @@ public class App
         ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         
         ServicioRemoto sr = (ServicioRemoto)appContext.getBean("servicioRemoto");
-        System.out.println("anotacion numero aleatorio: " + sr.numeroAleatorio());
+        Object o = sr.datos();
+        System.out.print(o.getClass());
+        System.out.println("\t" + o);
     }
 }

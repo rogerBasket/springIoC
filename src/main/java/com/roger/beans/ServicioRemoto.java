@@ -1,10 +1,15 @@
 package com.roger.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ServicioRemoto {
-	public int numeroAleatorio() {
-		return (int)(Math.random()*10.0);
+	
+	@Autowired
+	private Procesos numeros;
+	
+	public Object datos() {
+		return numeros.ejecutar();
 	}
 }
